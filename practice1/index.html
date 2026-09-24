@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Async Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Async Lab</h1>
+    <p class="lead">Closures, promises and the event loop, one small experiment at a time.</p>
+
+    <section>
+      <h2>Tasks</h2>
+      <ul id="tasks"></ul>
+      <button id="runAll">Run All Tasks</button>
+      <p id="allStatus" class="note" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <h2>Sequential vs concurrent</h2>
+      <p class="note">Both runs use the same three random delays, so the only difference is how the promises are awaited.</p>
+      <button id="compare">Compare Sequential and Concurrent</button>
+      <div id="compareOut" class="note" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>Event loop demo</h2>
+      <button id="loopDemo">Run Event Loop Demo</button>
+      <div class="cols">
+        <div><h3>My prediction</h3><ol id="predicted"></ol></div>
+        <div><h3>Actual output</h3><ol id="actual"></ol></div>
+      </div>
+      <p id="loopVerdict" class="note" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
