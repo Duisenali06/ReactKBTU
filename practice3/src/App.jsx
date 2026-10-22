@@ -28,8 +28,7 @@ function App() {
     const matchesFilter = (i) =>
         filter === 'all' || (filter === 'active' ? !i.status : i.status)
 
-    // id видимых элементов в текущем порядке — нужно, чтобы стрелки
-    // двигали элемент относительно соседа, которого видно на экране
+
     const visibleIds = items.filter(matchesFilter).map((i) => i.id)
 
     const moveItem = (id, dir) => {
@@ -83,9 +82,6 @@ function App() {
                 </div>
 
                 <ul className="space-y-2">
-                    {/* key={id} (а не index) — состояние остаётся у «своего» элемента при перестановке.
-              Скрытые фильтром элементы НЕ размонтируются (класс hidden),
-              поэтому их локальное состояние не теряется. */}
                     {items.map((i) => (
                         <TodoItem
                             key={i.id}
